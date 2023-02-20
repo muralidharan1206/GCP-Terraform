@@ -1,6 +1,6 @@
 variable "project-id" {
   description = "This will have the project-id"
-  default     = "nice-script-373112"
+  default     = "fit-boulevard-377408"
 }
 
 variable "region" {
@@ -18,5 +18,13 @@ variable "disk-size" {
 
 variable "serviceaccount" {
   type    = list(any)
-  default = ["551110528569-compute@developer.gserviceaccount.com"]
+  default = ["946215667278-compute@developer.gserviceaccount.com"]
+}
+
+variable "location" {
+  default = "US-CENTRAL1"
+}
+
+variable "name" {
+  default = "statfile-test-bucket"
 }

@@ -7,16 +7,23 @@ terraform {
   }
 }
 
+terraform {
+    backend "gcs" {
+    bucket  = "statefile-test-bucket"
+    prefix  = "terraform/state"
+  }
+}
+
 provider "google" {
   project     = var.project-id
   region      = var.region
-  credentials = file("../JSON_Key/nice-script-373112-6515ce451d8a.json")
+  credentials = file("../JSON_Key/fit-boulevard-377408-dfe7e9baad4a.json")
 }
 
 module "vpc" {
   source     = "./modules/vpc"
   vpc_name   = "test-network"
-  project_id = "nice-script-373112"
+  project_id = "fit-boulevard-377408"
 }
 
 module "subnet" {
@@ -42,4 +49,8 @@ module "firewall" {
   networkID      = module.vpc.vpc-id
   serviceaccount = var.serviceaccount
   project_id     = var.project-id
+}
+
+module "instance-template" {
+  source = "./modules/instance-template"
 }
