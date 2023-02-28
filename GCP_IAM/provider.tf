@@ -18,13 +18,3 @@ terraform {
     prefix  = "terraformIAM/state"
   }
 }
-
-terraform {
-  cloud {
-    organization = "terrafromcloud-org"
-
-    workspaces {
-      name = "demo_workspace"
-    }
-  }
-}
