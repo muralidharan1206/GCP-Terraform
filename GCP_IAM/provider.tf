@@ -9,7 +9,7 @@ terraform {
 
 provider "google" {
   /* project     = "fit-boulevard-377408" */
-  credentials = file("../JSON_Key/fit-boulevard-377408-bc644dafc2f2.json")  
+ # credentials = file("../JSON_Key/fit-boulevard-377408-bc644dafc2f2.json") 
 }
 
 terraform {
