@@ -2,10 +2,16 @@ name: test
 on: 
   workflow_dispatch:
     inputs:
-    choose-env:
-      description: 'Choose the environment'
-      required: true
-      options:
-        - development
-        - staging
-        - production
+       choose-env:
+          description: 'Choose the environment'
+          required: true
+          options:
+          - development
+          - staging
+          - production
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
