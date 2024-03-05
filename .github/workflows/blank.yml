@@ -2,13 +2,16 @@ name: test
 on: 
   workflow_dispatch:
     inputs:
-       choose-env:
-          description: 'Choose the environment'
-          required: true
-          options:
-             - development
-             - staging
-             - production
+      environment:
+        type: environment
+        description: Select the environment
+      choice:
+              type: choice
+              description: Make a choice
+              options:
+              - development
+              - staging
+              - production
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
