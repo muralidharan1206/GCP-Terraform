@@ -1,0 +1,11 @@
+name: test
+on: 
+  workflow_dispatch:
+  inputs:
+    choose-env:
+      description: 'Choose the environment'
+      required: true
+      options:
+        - development
+        - staging
+        - production
